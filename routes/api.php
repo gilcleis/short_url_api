@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/short-urls', [ShortUrlController::class, 'store'])->name('short-url.store');
+Route::delete('/short-urls/{shortUrl:code}', [ShortUrlController::class, 'destroy'])->name('short-url.destroy');

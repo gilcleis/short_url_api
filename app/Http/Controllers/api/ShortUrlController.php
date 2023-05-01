@@ -18,9 +18,9 @@ class ShortUrlController extends Controller
         $code = CodeGenerator::run();
 
         $shortUrl = ShortUrl::query()
-        ->firstOrCreate([
-            'url' => request('url'),
-        ], [
+            ->firstOrCreate([
+                'url' => request('url'),
+            ], [
                 'url'       => request('url'),
                 'short_url' => config('app.url') . '/' . $code,
                 'code'      => $code,
@@ -29,5 +29,13 @@ class ShortUrlController extends Controller
         return response()->json([
             'short_url' => $shortUrl->short_url,
         ], Response::HTTP_CREATED);
+    }
+
+
+    public function destroy(ShortUrl $shortUrl)
+    {
+        $shortUrl->delete();
+
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }
