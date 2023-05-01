@@ -6,7 +6,7 @@
 - [ ] Salvar um endpoint
     - [X] Precisar enviar o endpoint que queremos encurtar
     - [X] Endpoint tem que ser válido
-    - [ ] não pode se repetir
+    - [X] não pode se repetir
     - [X] Esperamos receber uma url encurtada pdl.test/YH21
     - [X] Esperamos receber um status code 201
 - [ ] Deletar a url curta baseado na url gerada
